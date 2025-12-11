@@ -1,8 +1,9 @@
-<?php include 'koneksi.php';
+<?php include '../koneksi.php';
 $query = mysqli_query($conn, "SELECT * FROM tbl_matkul");
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Data Mata Kuliah</title>
@@ -19,6 +20,7 @@ $query = mysqli_query($conn, "SELECT * FROM tbl_matkul");
                     <th>NAMA MATKUL</th>
                     <th>SKS</th>
                     <th>NIDN</th>
+                    <th>ACTION</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,11 +30,16 @@ $query = mysqli_query($conn, "SELECT * FROM tbl_matkul");
                         <td><?php echo $data['NamaMatkul']; ?></td>
                         <td><?php echo $data['Sks']; ?></td>
                         <td><?php echo $data['Nidn']; ?></td>
+                        <td>
+                            <a href="edit.php?KodeMatkul=<?= $data['KodeMatkul']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="delet.php?KodeMatkul=<?= $data['KodeMatkul']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <a href="MenuKampus.php" class="btn btn-secondary">Kembali ke Menu</a>
+        <a href="../MenuKampus.php" class="btn btn-secondary">Kembali ke Menu</a>
+        <a href="input.php" class="btn btn-secondary">Tambah Data </a>
     </div>
 </body>
 
