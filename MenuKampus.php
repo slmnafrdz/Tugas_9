@@ -1,5 +1,6 @@
 <?php
 include 'koneksi.php';
+include 'Login/blok_login.php';
 ?>
 
 <!DOCTYPE html>
@@ -92,17 +93,16 @@ include 'koneksi.php';
         }
     </style>
 </head>
-
 <body>
 
     <!-- SIDEBAR -->
     <div class="sidebar">
         <h4>📚 CIAKAD</h4>
-
         <a href="Datamahasiswa/Mahasiswa.php">👨‍🎓 Data Mahasiswa</a>
         <a href="Datadosen/Dosen.php">👩‍🏫 Data Dosen</a>
         <a href="Datamatkul/Matkul.php">📖 Data Mata Kuliah</a>
         <a href="Datanilai/Nilai.php">📝 Data Nilai</a>
+        <a href="Login/logout.php" class="text-danger">🔓 Logout</a>
 
         <hr style="border-color:#555;">
 
