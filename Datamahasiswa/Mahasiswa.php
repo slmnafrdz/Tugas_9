@@ -75,6 +75,7 @@ $query = mysqli_query($conn, "SELECT * FROM tbl_mahasiswa");
             <table class="table table-hover align-middle">
                 <thead class="table-primary">
                     <tr>
+                        <th>Image</th>
                         <th>NIM</th>
                         <th>Nama</th>
                         <th>Prodi</th>
@@ -87,6 +88,7 @@ $query = mysqli_query($conn, "SELECT * FROM tbl_mahasiswa");
                 <tbody>
                     <?php while ($data = mysqli_fetch_assoc($query)) : ?>
                         <tr>
+                            <td><img src="<?= $data['image']; ?>" width="100"></td>
                             <td><?= $data['Nim']; ?></td>
                             <td><?= $data['Nama']; ?></td>
                             <td><?= $data['Prodi']; ?></td>

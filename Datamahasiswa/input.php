@@ -21,7 +21,7 @@ include '../koneksi.php';
             </div>
 
             <div class="card-body">
-                <form action="simpan.php" method="POST">
+                <form action="simpan.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label class="form-label">NIM</label>
                         <input type="text" name="Nim" class="form-control" required>
@@ -51,7 +51,10 @@ include '../koneksi.php';
                         <label class="form-label">Email</label>
                         <input type="email" name="Email" class="form-control" required>
                     </div>
-
+                    <div class="mb-3">
+                        <label class="form-label">Upload Image</label>
+                        <input type="file" name="file_gambar" class="form-control" required>
+                    </div>
                     <button type="submit" class="btn btn-success">Simpan</button>
                     <a href="Mahasiswa.php" class="btn btn-secondary">Kembali</a>
 

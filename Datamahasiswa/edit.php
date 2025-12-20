@@ -27,7 +27,7 @@ $mhs = mysqli_fetch_array($query);
             </div>
 
             <div class="card-body">
-                <form action="proses_edit.php" method="post">
+                <form action="proses_edit.php" method="post" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label class="form-label">NIM</label>
@@ -58,7 +58,10 @@ $mhs = mysqli_fetch_array($query);
                         <label class="form-label">Email</label>
                         <input type="email" name="Email" class="form-control" value="<?= $mhs['Email']; ?>" required>
                     </div>
-
+                    <div class="mb-3">
+                        <label class="form-label">Upload Image</label>
+                        <input type="file" name="file_gambar" class="form-control" required>
+                    </div>
                     <button type="submit" class="btn btn-warning">Update</button>
                     <a href="Mahasiswa.php" class="btn btn-secondary">Kembali</a>
 
